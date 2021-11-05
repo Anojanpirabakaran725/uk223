@@ -11,10 +11,13 @@ import java.util.Collection;
 import java.util.UUID;
 
 @RestController @RequestMapping("/api")
-@RequiredArgsConstructor
 public class UserController {
 //    ADD YOUR ENDPOINT MAPPINGS HERE
 private final UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping("/")
     public ResponseEntity<String> HomeTest(){

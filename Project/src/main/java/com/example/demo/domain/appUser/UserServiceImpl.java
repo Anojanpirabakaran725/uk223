@@ -17,13 +17,18 @@ import javax.transaction.Transactional;
 
 import java.util.*;
 
-@Service @RequiredArgsConstructor @Transactional
+@Service @Transactional
 public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Autowired
     private final UserRepository userRepository;
     @Autowired
     private final RoleRepository roleRepository;
+
+    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository) {
+        this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
+    }
 
 
     @Override
