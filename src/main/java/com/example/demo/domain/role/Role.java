@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
-//#from lombok
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

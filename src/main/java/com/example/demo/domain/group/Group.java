@@ -2,11 +2,8 @@ package com.example.demo.domain.group;
 
 import com.example.demo.domain.appUser.User;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.List;
+import javax.persistence.*;
+import java.util.Set;
 import java.util.UUID;
 
 @Entity(name = "groups")
@@ -18,14 +15,24 @@ public class Group {
     private String name;
     private String description;
 
-    public Group(UUID id, String name, String desc) {
+    public Group(UUID id, String name, String desc, Set<User> users) {
         this.id = id;
         this.name = name;
         this.description = desc;
+        this.users = users;
     }
 
     public Group() {
     }
+
+    @OneToMany()
+    @JoinTable(
+            name = "groups_users",
+            joinColumns = @JoinColumn(
+                    name = "groups_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "users_id", referencedColumnName = "id"))
+    private Set<User> users;
 
     public UUID getId() {
         return id;
@@ -49,5 +56,13 @@ public class Group {
 
     public void setDescription(String desc) {
         this.description = desc;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
     }
 }

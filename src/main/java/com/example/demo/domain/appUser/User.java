@@ -8,7 +8,6 @@ import java.util.Set;
 import java.util.UUID;
 
 @Entity(name="users")
-//from lombok
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
