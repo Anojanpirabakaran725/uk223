@@ -57,7 +57,11 @@ public class GroupServiceImpl implements GroupService {
     public void addUserToGroup(String username, String groupName) {
         User user = userRepository.findByUsername(username);
         Group group = groupRepository.findByName(groupName);
-        group.getUsers().add(user);
+        if (user.getGroup() == null){
+            user.setGroup(group);
+        }else {
+            System.out.println("Already in group");
+        }
     }
 
     @Override
@@ -69,5 +73,4 @@ public class GroupServiceImpl implements GroupService {
             throw new InstanceNotFoundException("Group not found");
         }
     }
-
 }
