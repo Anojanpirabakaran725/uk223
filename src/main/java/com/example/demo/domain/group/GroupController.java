@@ -1,7 +1,5 @@
 package com.example.demo.domain.group;
 
-import com.example.demo.domain.appUser.User;
-import com.example.demo.domain.appUser.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
