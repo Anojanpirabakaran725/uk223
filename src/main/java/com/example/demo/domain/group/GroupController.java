@@ -2,11 +2,13 @@ package com.example.demo.domain.group;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.management.InstanceAlreadyExistsException;
+import javax.management.InstanceNotFoundException;
 import java.util.Collection;
+import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/groups")
@@ -18,9 +20,29 @@ public class GroupController {
         this.groupService = groupService;
     }
 
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<Collection<Group>> findAll() {
         return new ResponseEntity<Collection<Group>>(groupService.findAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/{uuid}")
+    public ResponseEntity<Group> findById(@PathVariable("uuid") UUID uuid) {
+            return new ResponseEntity<Group>(groupService.findById(uuid), HttpStatus.OK);
+    }
+
+    /*@PutMapping("/{uuid}")
+    public void replaceById(@RequestBody Group group, @PathVariable UUID uuid) throws InstanceNotFoundException {
+        groupService.put(group, uuid);
+    }*/
+
+    @DeleteMapping("/{uuid}")
+    public void delete(@PathVariable UUID uuid){
+        groupService.delete(uuid);
+    }
+
+    @PostMapping
+    public ResponseEntity<Group> postMethod(@RequestBody Group group) throws InstanceAlreadyExistsException {
+        return ResponseEntity.ok().body(groupService.saveGroup(group));
     }
 
 }

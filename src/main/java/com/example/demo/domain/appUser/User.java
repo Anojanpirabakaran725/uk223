@@ -1,5 +1,6 @@
 package com.example.demo.domain.appUser;
 
+import com.example.demo.domain.group.Group;
 import com.example.demo.domain.role.Role;
 import lombok.*;
 
@@ -16,16 +17,26 @@ public class User {
     private String email;
     private String password;
 
-    public User(UUID id, String username, String email, String password, Set<Role> roles) {
+    public User(UUID id, String username, String email, String password, Set<Role> roles, Group group) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.roles = roles;
+        this.group = group;
     }
 
     public User() {
     }
+
+    @ManyToOne
+    @JoinTable(
+            name = "groups_users",
+            joinColumns = @JoinColumn(
+                    name = "groups_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "users_id", referencedColumnName = "id"))
+    private Group group;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -74,5 +85,13 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
 }

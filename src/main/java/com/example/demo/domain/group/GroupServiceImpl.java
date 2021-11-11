@@ -6,6 +6,7 @@ import com.example.demo.domain.appUser.UserService;
 import com.example.demo.domain.role.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 
 import javax.management.InstanceAlreadyExistsException;
 import javax.management.InstanceNotFoundException;
@@ -15,7 +16,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-@Transactional
 public class GroupServiceImpl implements GroupService {
 
     @Autowired
@@ -32,6 +32,26 @@ public class GroupServiceImpl implements GroupService {
     public List<Group> findAll() {
         return groupRepository.findAll();
     }
+
+    @Override
+    public void delete(UUID uuid) {
+        groupRepository.delete(findById(uuid));
+    }
+
+    /*@Override
+    public Group put(Group newGroup, UUID uuid) throws InstanceNotFoundException {
+        Optional<Group> foundGroup = groupRepository.findById(uuid);
+        if (foundGroup.isPresent()){
+            foundGroup.get().setName(newGroup.getName());
+            foundGroup.get().setDescription(newGroup.getDescription());
+            foundGroup.get().setUsers(newGroup.getUsers());
+
+        }else {
+            throw new InstanceNotFoundException("");
+        }
+
+        return groupRepository.save(foundGroup.get());
+    }*/
 
     @Override
     public Group saveGroup(Group group) throws InstanceAlreadyExistsException {
@@ -57,17 +77,16 @@ public class GroupServiceImpl implements GroupService {
     public void addUserToGroup(String username, String groupName) {
         User user = userRepository.findByUsername(username);
         Group group = groupRepository.findByName(groupName);
-        group.getUsers().add(user);
+        if (user.getGroup() == null){
+            user.setGroup(group);
+        }else {
+            System.out.println("Already in group");
+        }
     }
 
     @Override
-    public Optional<Group> findById(UUID id) throws InstanceNotFoundException {
-        if (groupRepository.existsById(id)){
-            return groupRepository.findById(id);
-        }
-        else{
-            throw new InstanceNotFoundException("Group not found");
-        }
+    public Group findById(UUID id) {
+            Optional<Group> group = groupRepository.findById(id);
+            return group.orElse(null);
     }
-
 }

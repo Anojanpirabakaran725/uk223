@@ -17,7 +17,7 @@ import javax.transaction.Transactional;
 
 import java.util.*;
 
-@Service @Transactional
+@Service
 public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Autowired
