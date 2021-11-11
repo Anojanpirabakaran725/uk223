@@ -105,4 +105,17 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     public List<User> findAll() {
         return userRepository.findAll();
     }
+
+    public User updateUser(UUID id, User user){
+        return userRepository.findById(id)
+                .map(user1 -> {
+                    user1.setUsername(user.getUsername());
+                    user1.setEmail(user.getEmail());
+                    user1.setPassword(user.getPassword());
+                    user1.setRoles(user.getRoles());
+                    return userRepository.save(user1);
+                }).orElseGet(() -> {
+                    return userRepository.save(user);
+                });
+    }
 }

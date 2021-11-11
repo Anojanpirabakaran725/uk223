@@ -42,4 +42,9 @@ public class UserController {
     public ResponseEntity<User> saveUser(@RequestBody User user) throws InstanceAlreadyExistsException {
         return ResponseEntity.ok().body(userService.saveUser(user));
     }
+
+    @PutMapping("/{id}")
+    public User updateUser(@PathVariable UUID id, @RequestBody User user){
+        return userService.updateUser(id, user);
+    }
 }
