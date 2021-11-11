@@ -18,5 +18,5 @@ public interface GroupService {
     void addUserToGroup(String username, String groupName);
     Group findById(UUID id);
     List<Group> findAll();
-    Group put(Group group, UUID uuid);
+    Group put(Group group, UUID uuid) throws InstanceNotFoundException;
 }

@@ -13,6 +13,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.util.Arrays;
 import java.util.Set;
 
@@ -66,8 +67,8 @@ class AppStartupRunner implements ApplicationRunner {
         Group group1 = new Group(null, "Admins", "Good group", Set.of());
         Group group2 = new Group(null, "Users", "Good group", Set.of());
 
-        groupService.saveGroup(group1);
-        groupService.saveGroup(group2);
+        group1 = groupService.saveGroup(group1);
+        group2 = groupService.saveGroup(group2);
 
         //Users
         User user1 = new User(null, "james","james.bond@mi6.com","bond", Set.of(admin_role), group1);
@@ -80,6 +81,5 @@ class AppStartupRunner implements ApplicationRunner {
         group2.setUsers(Set.of(user2));
 
         groupService.put(group1, group1.getId());
-        groupService.put(group2, group2.getId());
     }
 }

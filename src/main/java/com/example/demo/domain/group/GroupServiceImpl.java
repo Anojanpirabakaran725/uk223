@@ -6,6 +6,7 @@ import com.example.demo.domain.appUser.UserService;
 import com.example.demo.domain.role.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 
 import javax.management.InstanceAlreadyExistsException;
 import javax.management.InstanceNotFoundException;
@@ -15,7 +16,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-@Transactional
 public class GroupServiceImpl implements GroupService {
 
     @Autowired
@@ -34,18 +34,18 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public Group put(Group newGroup, UUID uuid) {
-        return groupRepository.findById(uuid)
-                .map(group -> {
-                    group.setName(newGroup.getName());
-                    group.setDescription(newGroup.getDescription());
-                    group.setUsers(newGroup.getUsers());
-                    return groupRepository.save(group);
-                })
-                .orElseGet(() -> {
-                    newGroup.setId(uuid);
-                    return groupRepository.save(newGroup);
-                });
+    public Group put(Group newGroup, UUID uuid) throws InstanceNotFoundException {
+        Optional<Group> foundGroup = groupRepository.findById(uuid);
+        if (foundGroup.isPresent()){
+            foundGroup.get().setName(newGroup.getName());
+            foundGroup.get().setDescription(newGroup.getDescription());
+            foundGroup.get().setUsers(newGroup.getUsers());
+
+        }else {
+            throw new InstanceNotFoundException("Nothing found");
+        }
+
+        return groupRepository.save(foundGroup.get());
     }
 
     @Override

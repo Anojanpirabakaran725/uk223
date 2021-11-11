@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.management.InstanceAlreadyExistsException;
 import javax.management.InstanceNotFoundException;
 import java.util.Collection;
 import java.util.Optional;
@@ -30,8 +31,13 @@ public class GroupController {
     }
 
     @PutMapping("/{uuid}")
-    public void replaceById(@RequestBody Group group, @PathVariable UUID uuid){
+    public void replaceById(@RequestBody Group group, @PathVariable UUID uuid) throws InstanceNotFoundException {
         groupService.put(group, uuid);
+    }
+
+    @PostMapping
+    public ResponseEntity<Group> postMethod(@RequestBody Group group) throws InstanceAlreadyExistsException {
+        return ResponseEntity.ok().body(groupService.saveGroup(group));
     }
 
 }
