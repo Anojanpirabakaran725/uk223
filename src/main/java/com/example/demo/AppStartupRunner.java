@@ -80,6 +80,6 @@ class AppStartupRunner implements ApplicationRunner {
         group1.setUsers(Set.of(user1));
         group2.setUsers(Set.of(user2));
 
-        groupService.put(group1, group1.getId());
+        //groupService.put(group1, group1.getId());
     }
 }

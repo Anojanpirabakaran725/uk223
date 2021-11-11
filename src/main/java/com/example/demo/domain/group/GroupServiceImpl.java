@@ -34,6 +34,11 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
+    public void delete(UUID uuid) {
+        groupRepository.delete(findById(uuid));
+    }
+
+    /*@Override
     public Group put(Group newGroup, UUID uuid) throws InstanceNotFoundException {
         Optional<Group> foundGroup = groupRepository.findById(uuid);
         if (foundGroup.isPresent()){
@@ -42,11 +47,11 @@ public class GroupServiceImpl implements GroupService {
             foundGroup.get().setUsers(newGroup.getUsers());
 
         }else {
-            throw new InstanceNotFoundException("Nothing found");
+            throw new InstanceNotFoundException("");
         }
 
         return groupRepository.save(foundGroup.get());
-    }
+    }*/
 
     @Override
     public Group saveGroup(Group group) throws InstanceAlreadyExistsException {

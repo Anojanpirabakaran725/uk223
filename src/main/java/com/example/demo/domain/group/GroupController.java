@@ -30,9 +30,14 @@ public class GroupController {
             return new ResponseEntity<Group>(groupService.findById(uuid), HttpStatus.OK);
     }
 
-    @PutMapping("/{uuid}")
+    /*@PutMapping("/{uuid}")
     public void replaceById(@RequestBody Group group, @PathVariable UUID uuid) throws InstanceNotFoundException {
         groupService.put(group, uuid);
+    }*/
+
+    @DeleteMapping("/{uuid}")
+    public void delete(@PathVariable UUID uuid){
+        groupService.delete(uuid);
     }
 
     @PostMapping
