@@ -118,4 +118,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
                     return userRepository.save(user);
                 });
     }
+
+    public void deleteUser(UUID id){
+        userRepository.deleteById(id);
+    }
 }
