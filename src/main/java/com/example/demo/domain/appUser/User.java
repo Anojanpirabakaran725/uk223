@@ -29,7 +29,7 @@ public class User {
     public User() {
     }
 
-    @OneToOne
+    @ManyToOne
     @JoinTable(
             name = "groups_users",
             joinColumns = @JoinColumn(

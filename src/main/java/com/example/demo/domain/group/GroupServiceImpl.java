@@ -34,6 +34,21 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
+    public Group put(Group newGroup, UUID uuid) {
+        return groupRepository.findById(uuid)
+                .map(group -> {
+                    group.setName(newGroup.getName());
+                    group.setDescription(newGroup.getDescription());
+                    group.setUsers(newGroup.getUsers());
+                    return groupRepository.save(group);
+                })
+                .orElseGet(() -> {
+                    newGroup.setId(uuid);
+                    return groupRepository.save(newGroup);
+                });
+    }
+
+    @Override
     public Group saveGroup(Group group) throws InstanceAlreadyExistsException {
         if (groupRepository.findByName(group.getName()) != null){
             throw new InstanceAlreadyExistsException("Group already exists");
@@ -65,12 +80,8 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
-    public Optional<Group> findById(UUID id) throws InstanceNotFoundException {
-        if (groupRepository.existsById(id)){
-            return groupRepository.findById(id);
-        }
-        else{
-            throw new InstanceNotFoundException("Group not found");
-        }
+    public Group findById(UUID id) {
+            Optional<Group> group = groupRepository.findById(id);
+            return group.orElse(null);
     }
 }

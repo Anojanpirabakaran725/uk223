@@ -49,11 +49,11 @@ class AppStartupRunner implements ApplicationRunner {
         Authority write_auth = new Authority(null,"WRITE");
         authorityRepository.save(write_auth);
 
-        Authority exec_auth = new Authority(null,"EXECUTE");
-        authorityRepository.save(exec_auth);
+        Authority delete = new Authority(null,"Delete");
+        authorityRepository.save(delete);
 
 //        Roles
-        Role admin_role = new Role(null, "Admin",Arrays.asList(read_auth, write_auth, exec_auth));
+        Role admin_role = new Role(null, "Admin",Arrays.asList(read_auth, write_auth, delete));
         roleRepository.save(admin_role);
 
         Role user_role = new Role(null, "User",Arrays.asList(read_auth, write_auth));
@@ -65,21 +65,21 @@ class AppStartupRunner implements ApplicationRunner {
         //Groups
         Group group1 = new Group(null, "Admins", "Good group", Set.of());
         Group group2 = new Group(null, "Users", "Good group", Set.of());
-        Group group3 = new Group(null, "Guests", "Good group", Set.of());
+
+        groupService.saveGroup(group1);
+        groupService.saveGroup(group2);
 
         //Users
         User user1 = new User(null, "james","james.bond@mi6.com","bond", Set.of(admin_role), group1);
-        User user2 = new User(null, "max","max.muster@gmail.com","muster", Set.of(user_role), group2);
-        User user3 = new User(null, "john","john.doe@yahoo.com","doe", Set.of(guest_role), group3);
+        User user2 = new User(null, "john","john.doe@yahoo.com","doe", Set.of(guest_role), group2);
+
+        userService.saveUser(user1);
+        userService.saveUser(user2);
 
         group1.setUsers(Set.of(user1));
         group2.setUsers(Set.of(user2));
-        group3.setUsers(Set.of(user3));
 
-        groupService.addUserToGroup(user1.getUsername(), group1.getName());
-        groupService.addUserToGroup(user2.getUsername(), group2.getName());
-        groupService.addUserToGroup(user3.getUsername(), group3.getName());
-
+        groupService.put(group1, group1.getId());
+        groupService.put(group2, group2.getId());
     }
 }
-
