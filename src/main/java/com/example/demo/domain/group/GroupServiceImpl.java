@@ -96,4 +96,8 @@ public class GroupServiceImpl implements GroupService {
                     return groupRepository.save(group);
                 });
     }
+
+    public boolean isInGroup(UUID userUuid){
+        return groupRepository.existsById(userUuid);
+    }
 }
