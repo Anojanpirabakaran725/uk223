@@ -3,7 +3,7 @@
 Herzlich Willkommen zu unserem üK Projekt. Unsere Aufgabe ist es die Teilaufgabe 4 in unserem Projekt zu implementieren.
 Dieses Projekt wurde von Anojan Pirabakaran und Enes Spahiu implementiert.
 
-#Voraussetzungen
+# Voraussetzungen
 Seien Sie sicher, das Sie JAVA JDK VERSION 11 haben.
 Wählen Sie in den "Project Structure" unter "Project SDK" JDK 11.
 
@@ -14,7 +14,7 @@ Wenn Sie noch keinen haben, erstellen Sie einen mit diesem Command:
 Der Benutzername und das Password sind beide "postgres".
 Wenn Sie Lust hätten das Password zu ändern, gehen Sie im Projekt unter "application.properties".
 
-#Setup
+# Setup
 Clonen Sie dieses Projekt auf ihren Rechner. Öffnen Sie das Projekt mit IntelliJ.
 Wir haben Gradle schon heruntergeladen. Sie müssen nur die Gradle Funktion "bootRun" laufen lassen
 
@@ -28,7 +28,7 @@ Nun sehen Sie auf Ihrem Bildschirm "Hello World".
 Stellen Sie im DBeaver eine neue Verbindung her.
 Der Benutername und das Password sind "postgres".
 
-#Probleme
+# Probleme
 - Wenn ein Problem mit groups_users auftaucht, starten Sie das Backend neu.
 - Container neu starten und schauen ob der Container lauft.
 - IntelliJ und Spring Boot neu starten.
