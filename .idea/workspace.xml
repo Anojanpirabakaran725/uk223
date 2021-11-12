@@ -3,8 +3,30 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5cff08bd-f580-4b32-a43f-83d3612df5be" name="Changes" comment="" />
+    <list default="true" id="5cff08bd-f580-4b32-a43f-83d3612df5be" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/AppStartupRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/AppStartupRunner.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,12 +55,6 @@
                 <item name="demo" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="application" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="demo" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
               </path>
             </expand>
             <select />
@@ -103,9 +119,7 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -132,5 +146,35 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="354" key="GridCell.Tab.0.bottom" timestamp="1636723288789">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="354" key="GridCell.Tab.0.bottom/-3840.-424.1536.848/0.0.1920.1160/1920.23.1920.1160@0.0.1920.1160" timestamp="1636723288789" />
+    <state width="1877" height="354" key="GridCell.Tab.0.center" timestamp="1636723288789">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="354" key="GridCell.Tab.0.center/-3840.-424.1536.848/0.0.1920.1160/1920.23.1920.1160@0.0.1920.1160" timestamp="1636723288789" />
+    <state width="1877" height="354" key="GridCell.Tab.0.left" timestamp="1636723288789">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="354" key="GridCell.Tab.0.left/-3840.-424.1536.848/0.0.1920.1160/1920.23.1920.1160@0.0.1920.1160" timestamp="1636723288789" />
+    <state width="1877" height="354" key="GridCell.Tab.0.right" timestamp="1636723288789">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state width="1877" height="354" key="GridCell.Tab.0.right/-3840.-424.1536.848/0.0.1920.1160/1920.23.1920.1160@0.0.1920.1160" timestamp="1636723288789" />
   </component>
 </project>
