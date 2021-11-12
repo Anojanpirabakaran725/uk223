@@ -27,7 +27,7 @@ public class GroupController {
 
     @GetMapping("/{uuid}")
     public ResponseEntity<Group> findById(@PathVariable("uuid") UUID uuid) {
-            return new ResponseEntity<Group>(groupService.findById(uuid), HttpStatus.OK);
+        return new ResponseEntity<Group>(groupService.findById(uuid), HttpStatus.OK);
     }
 
     /*@PutMapping("/{uuid}")
@@ -36,13 +36,18 @@ public class GroupController {
     }*/
 
     @DeleteMapping("/{uuid}")
-    public void delete(@PathVariable UUID uuid){
+    public void delete(@PathVariable UUID uuid) {
         groupService.delete(uuid);
     }
 
     @PostMapping("/")
     public ResponseEntity<Group> postMethod(@RequestBody Group group) throws InstanceAlreadyExistsException {
         return ResponseEntity.ok().body(groupService.saveGroup(group));
+    }
+
+    @PutMapping("/{id}")
+    public Group updateGroup(@PathVariable UUID id, @RequestBody Group group) {
+     return groupService.updateGroup(id, group);
     }
 
 }
