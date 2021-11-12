@@ -43,12 +43,13 @@ class AppStartupRunner implements ApplicationRunner {
         authorityRepository.save(read_auth);
         Authority write_auth = new Authority(null,"WRITE");
         authorityRepository.save(write_auth);
-
-        Authority delete_auth = new Authority(null,"DELETE");
-        authorityRepository.save(delete_auth);
+        Authority delete = new Authority(null,"Delete");
+        authorityRepository.save(delete);
+        Authority all_privileges = new Authority(null, "ALL_PRIVILEGES");
+        authorityRepository.save(all_privileges);
 
 //        Roles
-        Role admin_role = new Role(null, "ADMIN",Arrays.asList(read_auth, write_auth, delete_auth));
+        Role admin_role = new Role(null, "Admin",Arrays.asList(all_privileges));
         roleRepository.save(admin_role);
 
         Role user_role = new Role(null, "USER",Arrays.asList(read_auth, write_auth));
