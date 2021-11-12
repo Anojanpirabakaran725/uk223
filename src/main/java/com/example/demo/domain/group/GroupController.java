@@ -1,6 +1,9 @@
 package com.example.demo.domain.group;
 
 import com.example.demo.domain.appUser.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Slice;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -34,9 +37,9 @@ public class GroupController {
             return new ResponseEntity<Group>(groupService.findById(uuid), HttpStatus.OK);
     }
 
-    @GetMapping("/users/{uuid}")
-    public ResponseEntity<Collection<User>> getAllUsersOfGroup(@PathVariable("uuid") UUID uuid){
-        return new ResponseEntity<Collection<User>>(groupService.getAllUsersOfGroup(uuid), HttpStatus.OK);
+    @GetMapping("/users/{uuid}/{offset}/{pageSize}")
+    public ResponseEntity<Page<User>> getAllUsersOfGroup(@PathVariable("uuid") UUID uuid, @PathVariable("offset") int offset, @PathVariable("pageSize") int pageSize){
+        return new ResponseEntity<>(groupService.getAllUsersOfGroup(uuid, offset, pageSize), HttpStatus.OK);
     }
 
     /*@PutMapping("/{uuid}")
