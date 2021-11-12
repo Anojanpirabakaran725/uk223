@@ -13,6 +13,7 @@ import java.util.UUID;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, UUID>, PagingAndSortingRepository<User, UUID> {
-    User findByUsername (String username);
+    User findByUsername(String username);
+
     Page<User> findAllUserByGroupId(UUID uuid, Pageable pageable);
 }

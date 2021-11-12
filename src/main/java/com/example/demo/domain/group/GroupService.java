@@ -17,13 +17,20 @@ import java.util.UUID;
 
 public interface GroupService {
     Group saveGroup(Group group) throws InstanceAlreadyExistsException;
+
     Group getGroup(String username);
+
     Page<User> getAllUsersOfGroup(UUID uuid, int offset, int pageSize);
+
     User saveUser(User user);
+
     void addUserToGroup(String username, String groupName);
+
     Group findById(UUID id);
+
     List<Group> findAll();
-    //Group put(Group group, UUID uuid) throws InstanceNotFoundException;
+
     void delete(UUID uuid);
+
     Group updateGroup(UUID id, Group group);
 }

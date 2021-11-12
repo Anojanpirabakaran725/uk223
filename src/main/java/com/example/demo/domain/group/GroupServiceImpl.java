@@ -39,27 +39,11 @@ public class GroupServiceImpl implements GroupService {
         groupRepository.delete(findById(uuid));
     }
 
-    /*@Override
-    public Group put(Group newGroup, UUID uuid) throws InstanceNotFoundException {
-        Optional<Group> foundGroup = groupRepository.findById(uuid);
-        if (foundGroup.isPresent()){
-            foundGroup.get().setName(newGroup.getName());
-            foundGroup.get().setDescription(newGroup.getDescription());
-            foundGroup.get().setUsers(newGroup.getUsers());
-
-        }else {
-            throw new InstanceNotFoundException("");
-        }
-
-        return groupRepository.save(foundGroup.get());
-    }*/
-
     @Override
     public Group saveGroup(Group group) throws InstanceAlreadyExistsException {
-        if (groupRepository.findByName(group.getName()) != null){
+        if (groupRepository.findByName(group.getName()) != null) {
             throw new InstanceAlreadyExistsException("Group already exists");
-        }
-        else {
+        } else {
             return groupRepository.save(group);
         }
     }
@@ -86,18 +70,18 @@ public class GroupServiceImpl implements GroupService {
     public void addUserToGroup(String username, String groupName) {
         User user = userRepository.findByUsername(username);
         Group group = groupRepository.findByName(groupName);
-        if (user.getGroup() == null){
+        if (user.getGroup() == null) {
             group.getUsers().add(user);
             groupRepository.save(group);
-        }else {
+        } else {
             System.out.println("Already in group");
         }
     }
 
     @Override
     public Group findById(UUID id) {
-            Optional<Group> group = groupRepository.findById(id);
-            return group.orElse(null);
+        Optional<Group> group = groupRepository.findById(id);
+        return group.orElse(null);
     }
 
     @Override
