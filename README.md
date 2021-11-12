@@ -1,4 +1,4 @@
-# üK Repository M223
+#üK Repository M223
 
 Herzlich Willkommen zu unserem üK Projekt. Unsere Aufgabe ist es die Teilaufgabe 4 in unserem Projekt zu implementieren.
 Dieses Projekt wurde von Anojan Pirabakaran und Enes Spahiu implementiert.
@@ -20,7 +20,9 @@ Wir haben Gradle schon heruntergeladen. Sie müssen nur die Gradle Funktion "boo
 
 Öffnen Sie Ihren Browser und geben Sie: localhost:8080/users/welcome ein.
 Wenn ein Login Fenster auftaucht, geben Sie das ein:
-ss: james
+
+
+benutzername: james     
 password: bond
 
 Nun sehen Sie auf Ihrem Bildschirm "Hello World".
@@ -33,3 +35,4 @@ Der Benutername und das Password sind "postgres".
 - Container neu starten und schauen ob der Container lauft.
 - IntelliJ und Spring Boot neu starten.
 - Connection zu DBeaver überprüfen.
+
