@@ -34,7 +34,7 @@ public class GroupController {
     @GetMapping("/{uuid}")
     @PreAuthorize("hasAuthority('READ')")
     public ResponseEntity<Group> findById(@PathVariable("uuid") UUID uuid) {
-            return new ResponseEntity<Group>(groupService.findById(uuid), HttpStatus.OK);
+        return new ResponseEntity<Group>(groupService.findById(uuid), HttpStatus.OK);
     }
 
     @GetMapping("/users/{uuid}/{offset}/{pageSize}")
@@ -58,6 +58,11 @@ public class GroupController {
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Group> postMethod(@RequestBody Group group) throws InstanceAlreadyExistsException {
         return ResponseEntity.ok().body(groupService.saveGroup(group));
+    }
+
+    @PutMapping("/{id}")
+    public Group updateGroup(@PathVariable UUID id, @RequestBody Group group) {
+     return groupService.updateGroup(id, group);
     }
 
 }

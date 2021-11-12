@@ -25,4 +25,5 @@ public interface GroupService {
     List<Group> findAll();
     //Group put(Group group, UUID uuid) throws InstanceNotFoundException;
     void delete(UUID uuid);
+    Group updateGroup(UUID id, Group group);
 }

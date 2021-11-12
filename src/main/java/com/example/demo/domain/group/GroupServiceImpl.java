@@ -99,4 +99,17 @@ public class GroupServiceImpl implements GroupService {
             Optional<Group> group = groupRepository.findById(id);
             return group.orElse(null);
     }
+
+    @Override
+    public Group updateGroup(UUID id, Group group) {
+        return groupRepository.findById(id)
+                .map(group1 -> {
+                    group1.setName(group.getName());
+                    group1.setDescription(group.getDescription());
+                    group1.setUsers(group.getUsers());
+                    return groupRepository.save(group);
+                }).orElseGet(() -> {
+                    return groupRepository.save(group);
+                });
+    }
 }

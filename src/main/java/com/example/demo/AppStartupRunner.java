@@ -15,12 +15,8 @@ import org.springframework.stereotype.Component;
 import javax.transaction.Transactional;
 import java.util.Arrays;
 import java.util.Set;
-<<<<<<< HEAD
-=======
 import java.util.UUID;
 
-
->>>>>>> feature/CRUD-operations
 @Component
 //ApplicationListener used to run commands after startup
 class AppStartupRunner implements ApplicationRunner {
@@ -47,22 +43,20 @@ class AppStartupRunner implements ApplicationRunner {
         authorityRepository.save(read_auth);
         Authority write_auth = new Authority(null,"WRITE");
         authorityRepository.save(write_auth);
-
-        Authority delete_auth = new Authority(null,"DELETE");
-        authorityRepository.save(delete_auth);
+        Authority delete = new Authority(null,"Delete");
+        authorityRepository.save(delete);
+        Authority all_privileges = new Authority(null, "ALL_PRIVILEGES");
+        authorityRepository.save(all_privileges);
 
 //        Roles
-        Role admin_role = new Role(null, "ADMIN",Arrays.asList(read_auth, write_auth, delete_auth));
+        Role admin_role = new Role(null, "Admin",Arrays.asList(all_privileges));
         roleRepository.save(admin_role);
 
         Role user_role = new Role(null, "USER",Arrays.asList(read_auth, write_auth));
         roleRepository.save(user_role);
-<<<<<<< HEAD
-        Role guest_role = new Role(null, "Guest",Arrays.asList(read_auth));
-=======
 
         Role guest_role = new Role(null, "GUEST",Arrays.asList(read_auth));
->>>>>>> feature/CRUD-operations
+
         roleRepository.save(guest_role);
 
         //Groups
@@ -77,13 +71,6 @@ class AppStartupRunner implements ApplicationRunner {
         User user2 = new User(null, "john","john.doe@yahoo.com","doe", Set.of(guest_role), null);
         User user3 = new User(null, "user1","user.uasdasdf@gmail.com","usa", Set.of(guest_role), null);
 
-<<<<<<< HEAD
-        user1 = userService.saveUser(user1);
-        user2 = userService.saveUser(user2);
-
-        group1.setUsers(Set.of(user1));
-        group2.setUsers(Set.of(user2));
-=======
         userService.saveUser(user1);
         userService.saveUser(user2);
         userService.saveUser(user3);
@@ -91,6 +78,11 @@ class AppStartupRunner implements ApplicationRunner {
         groupService.addUserToGroup("james", "Admins");
         groupService.addUserToGroup("john", "Users");
         groupService.addUserToGroup("user1", "Admins");
->>>>>>> feature/CRUD-operations
+
+        user1 = userService.saveUser(user1);
+        user2 = userService.saveUser(user2);
+
+        group1.setUsers(Set.of(user1));
+        group2.setUsers(Set.of(user2));
     }
 }
