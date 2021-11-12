@@ -16,5 +16,7 @@ public interface UserService {
     User getUser(String username);
     Optional<User> findById(UUID id) throws InstanceNotFoundException;
     List<User> findAll();
+    User updateUser(UUID id, User user);
+    void deleteUser(UUID id);
 
 }

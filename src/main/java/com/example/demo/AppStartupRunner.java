@@ -7,7 +7,6 @@ import com.example.demo.domain.group.Group;
 import com.example.demo.domain.group.GroupService;
 import com.example.demo.domain.role.Role;
 import com.example.demo.domain.role.RoleRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -17,7 +16,6 @@ import javax.transaction.Transactional;
 import java.util.Arrays;
 import java.util.Set;
 import java.util.UUID;
-
 
 @Component
 //ApplicationListener used to run commands after startup
@@ -30,24 +28,19 @@ class AppStartupRunner implements ApplicationRunner {
     private final AuthorityRepository authorityRepository;
     @Autowired
     private final GroupService groupService;
-
     AppStartupRunner(UserService userService, RoleRepository roleRepository, AuthorityRepository authorityRepository, GroupService groupService) {
         this.userService = userService;
         this.roleRepository = roleRepository;
         this.authorityRepository = authorityRepository;
         this.groupService = groupService;
     }
-
-
     @Override
     public void run(ApplicationArguments args) throws Exception {
 //        RUN YOUR STARTUP CODE HERE
 //        e.g. to add a user or role to the DB (only for testing)
-
 //        Authorities
         Authority read_auth = new Authority(null,"READ");
         authorityRepository.save(read_auth);
-
         Authority write_auth = new Authority(null,"WRITE");
         authorityRepository.save(write_auth);
 
@@ -62,6 +55,7 @@ class AppStartupRunner implements ApplicationRunner {
         roleRepository.save(user_role);
 
         Role guest_role = new Role(null, "GUEST",Arrays.asList(read_auth));
+
         roleRepository.save(guest_role);
 
         //Groups
@@ -83,5 +77,11 @@ class AppStartupRunner implements ApplicationRunner {
         groupService.addUserToGroup("james", "Admins");
         groupService.addUserToGroup("john", "Users");
         groupService.addUserToGroup("user1", "Admins");
+
+        user1 = userService.saveUser(user1);
+        user2 = userService.saveUser(user2);
+
+        group1.setUsers(Set.of(user1));
+        group2.setUsers(Set.of(user2));
     }
 }
