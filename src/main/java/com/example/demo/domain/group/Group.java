@@ -1,6 +1,8 @@
 package com.example.demo.domain.group;
 
 import com.example.demo.domain.appUser.User;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -25,7 +27,8 @@ public class Group {
     public Group() {
     }
 
-    @OneToMany()
+    @JsonBackReference
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "groups_users",
             joinColumns = @JoinColumn(
