@@ -5,12 +5,13 @@ import com.example.demo.domain.appUser.UserRepository;
 import com.example.demo.domain.appUser.UserService;
 import com.example.demo.domain.role.Role;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
 
 import javax.management.InstanceAlreadyExistsException;
-import javax.management.InstanceNotFoundException;
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -69,6 +70,14 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
+    public Page<User> getAllUsersOfGroup(UUID uuid, int offset, int pageSize) {
+        Pageable paging = PageRequest.of(offset, pageSize);
+        Page<User> userPage = this.userRepository.findAllUserByGroupId(uuid, paging);
+        userRepository.findAll();
+        return userPage;
+    }
+
+    @Override
     public User saveUser(User user) {
         return userRepository.save(user);
     }
@@ -78,7 +87,8 @@ public class GroupServiceImpl implements GroupService {
         User user = userRepository.findByUsername(username);
         Group group = groupRepository.findByName(groupName);
         if (user.getGroup() == null){
-            user.setGroup(group);
+            group.getUsers().add(user);
+            groupRepository.save(group);
         }else {
             System.out.println("Already in group");
         }

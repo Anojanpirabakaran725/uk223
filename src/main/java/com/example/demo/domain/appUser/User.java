@@ -2,6 +2,7 @@ package com.example.demo.domain.appUser;
 
 import com.example.demo.domain.group.Group;
 import com.example.demo.domain.role.Role;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -29,13 +30,14 @@ public class User {
     public User() {
     }
 
-    @ManyToOne
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(
             name = "groups_users",
             joinColumns = @JoinColumn(
-                    name = "groups_id", referencedColumnName = "id"),
+                    name = "users_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(
-                    name = "users_id", referencedColumnName = "id"))
+                    name = "groups_id", referencedColumnName = "id"))
     private Group group;
 
     @ManyToMany(fetch = FetchType.EAGER)
