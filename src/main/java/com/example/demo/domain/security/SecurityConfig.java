@@ -31,8 +31,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
-        http.cors();
-        http.authorizeRequests().anyRequest().fullyAuthenticated();
-        http.httpBasic();
+        http.httpBasic().and().authorizeRequests().antMatchers("/groups/").hasAnyAuthority("ALL_PRIVILEGES");
     }
  }

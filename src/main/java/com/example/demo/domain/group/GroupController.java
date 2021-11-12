@@ -40,7 +40,7 @@ public class GroupController {
         groupService.delete(uuid);
     }
 
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity<Group> postMethod(@RequestBody Group group) throws InstanceAlreadyExistsException {
         return ResponseEntity.ok().body(groupService.saveGroup(group));
     }
