@@ -78,11 +78,5 @@ class AppStartupRunner implements ApplicationRunner {
         groupService.addUserToGroup("james", "Admins");
         groupService.addUserToGroup("john", "Users");
         groupService.addUserToGroup("user1", "Admins");
-
-        user1 = userService.saveUser(user1);
-        user2 = userService.saveUser(user2);
-
-        group1.setUsers(Set.of(user1));
-        group2.setUsers(Set.of(user2));
     }
 }
