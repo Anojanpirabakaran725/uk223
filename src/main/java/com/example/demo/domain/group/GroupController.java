@@ -38,19 +38,13 @@ public class GroupController {
     }
 
     @GetMapping("/users/{uuid}/{offset}/{pageSize}")
-    public ResponseEntity<Page<User>> getAllUsersOfGroup(@PathVariable("uuid") UUID uuid, @PathVariable("offset") int offset, @PathVariable("pageSize") int pageSize){
+    public ResponseEntity<Page<User>> getAllUsersOfGroup(@PathVariable("uuid") UUID uuid, @PathVariable("offset") int offset, @PathVariable("pageSize") int pageSize) {
         return new ResponseEntity<>(groupService.getAllUsersOfGroup(uuid, offset, pageSize), HttpStatus.OK);
     }
 
-    /*@PutMapping("/{uuid}")
-    @PreAuthorize("hasAuthorize('READ')")
-    public void replaceById(@RequestBody Group group, @PathVariable UUID uuid) throws InstanceNotFoundException {
-        groupService.put(group, uuid);
-    }*/
-
     @DeleteMapping("/{uuid}")
     @PreAuthorize("hasAuthority('DELETE')")
-    public void delete(@PathVariable UUID uuid){
+    public void delete(@PathVariable UUID uuid) {
         groupService.delete(uuid);
     }
 
@@ -62,7 +56,7 @@ public class GroupController {
 
     @PutMapping("/{id}")
     public Group updateGroup(@PathVariable UUID id, @RequestBody Group group) {
-     return groupService.updateGroup(id, group);
+        return groupService.updateGroup(id, group);
     }
 
 }
