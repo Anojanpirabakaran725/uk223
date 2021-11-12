@@ -7,7 +7,6 @@ import com.example.demo.domain.group.Group;
 import com.example.demo.domain.group.GroupService;
 import com.example.demo.domain.role.Role;
 import com.example.demo.domain.role.RoleRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -16,8 +15,6 @@ import org.springframework.stereotype.Component;
 import javax.transaction.Transactional;
 import java.util.Arrays;
 import java.util.Set;
-
-
 @Component
 //ApplicationListener used to run commands after startup
 class AppStartupRunner implements ApplicationRunner {
@@ -29,24 +26,19 @@ class AppStartupRunner implements ApplicationRunner {
     private final AuthorityRepository authorityRepository;
     @Autowired
     private final GroupService groupService;
-
     AppStartupRunner(UserService userService, RoleRepository roleRepository, AuthorityRepository authorityRepository, GroupService groupService) {
         this.userService = userService;
         this.roleRepository = roleRepository;
         this.authorityRepository = authorityRepository;
         this.groupService = groupService;
     }
-
-
     @Override
     public void run(ApplicationArguments args) throws Exception {
 //        RUN YOUR STARTUP CODE HERE
 //        e.g. to add a user or role to the DB (only for testing)
-
 //        Authorities
         Authority read_auth = new Authority(null,"READ");
         authorityRepository.save(read_auth);
-
         Authority write_auth = new Authority(null,"WRITE");
         authorityRepository.save(write_auth);
 
@@ -59,7 +51,6 @@ class AppStartupRunner implements ApplicationRunner {
 
         Role user_role = new Role(null, "User",Arrays.asList(read_auth, write_auth));
         roleRepository.save(user_role);
-
         Role guest_role = new Role(null, "Guest",Arrays.asList(read_auth));
         roleRepository.save(guest_role);
 
@@ -74,12 +65,10 @@ class AppStartupRunner implements ApplicationRunner {
         User user1 = new User(null, "james","james.bond@mi6.com","bond", Set.of(admin_role), group1);
         User user2 = new User(null, "john","john.doe@yahoo.com","doe", Set.of(guest_role), group2);
 
-        userService.saveUser(user1);
-        userService.saveUser(user2);
+        user1 = userService.saveUser(user1);
+        user2 = userService.saveUser(user2);
 
         group1.setUsers(Set.of(user1));
         group2.setUsers(Set.of(user2));
-
-        //groupService.put(group1, group1.getId());
     }
 }
