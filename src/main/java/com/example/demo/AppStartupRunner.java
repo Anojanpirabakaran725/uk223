@@ -74,12 +74,14 @@ class AppStartupRunner implements ApplicationRunner {
         //Users
         User user1 = new User(null, "james","james.bond@mi6.com","bond", Set.of(admin_role), null);
         User user2 = new User(null, "john","john.doe@yahoo.com","doe", Set.of(guest_role), null);
+        User user3 = new User(null, "user1","user.uasdasdf@gmail.com","usa", Set.of(guest_role), null);
 
         userService.saveUser(user1);
         userService.saveUser(user2);
+        userService.saveUser(user3);
 
         groupService.addUserToGroup("james", "Admins");
-
-        //groupService.put(group1, group1.getId());
+        groupService.addUserToGroup("john", "Users");
+        groupService.addUserToGroup("user1", "Admins");
     }
 }
