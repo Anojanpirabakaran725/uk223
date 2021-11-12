@@ -13,6 +13,7 @@ import javax.management.InstanceNotFoundException;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 
 @Service
@@ -69,6 +70,11 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
+    public List<User> getAllUsersOfGroup(UUID groupUuid) {
+        return userRepository.findByGroupId(groupUuid);
+    }
+
+    @Override
     public User saveUser(User user) {
         return userRepository.save(user);
     }
@@ -78,7 +84,8 @@ public class GroupServiceImpl implements GroupService {
         User user = userRepository.findByUsername(username);
         Group group = groupRepository.findByName(groupName);
         if (user.getGroup() == null){
-            user.setGroup(group);
+            group.getUsers().add(user);
+            groupRepository.save(group);
         }else {
             System.out.println("Already in group");
         }

@@ -14,6 +14,7 @@ import java.util.UUID;
 public interface GroupService {
     Group saveGroup(Group group) throws InstanceAlreadyExistsException;
     Group getGroup(String username);
+    List<User> getAllUsersOfGroup(UUID uuid);
     User saveUser(User user);
     void addUserToGroup(String username, String groupName);
     Group findById(UUID id);
