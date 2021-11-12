@@ -6,6 +6,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Slice;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.method.P;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,12 +43,6 @@ public class GroupController {
         return new ResponseEntity<>(groupService.getAllUsersOfGroup(uuid, offset, pageSize), HttpStatus.OK);
     }
 
-    /*@PutMapping("/{uuid}")
-    @PreAuthorize("hasAuthorize('READ')")
-    public void replaceById(@RequestBody Group group, @PathVariable UUID uuid) throws InstanceNotFoundException {
-        groupService.put(group, uuid);
-    }*/
-
     @DeleteMapping("/{uuid}")
     @PreAuthorize("hasAuthority('DELETE')")
     public void delete(@PathVariable UUID uuid){
@@ -55,12 +50,13 @@ public class GroupController {
     }
 
     @PostMapping("/")
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAuthority('ALL_PRIVILEGES')")
     public ResponseEntity<Group> postMethod(@RequestBody Group group) throws InstanceAlreadyExistsException {
         return ResponseEntity.ok().body(groupService.saveGroup(group));
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasAuthority('WRITE')")
     public Group updateGroup(@PathVariable UUID id, @RequestBody Group group) {
      return groupService.updateGroup(id, group);
     }

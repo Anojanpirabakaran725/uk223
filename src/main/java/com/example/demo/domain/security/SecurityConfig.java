@@ -33,6 +33,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
         http.csrf().disable();
         http.httpBasic().and().authorizeRequests().antMatchers("/groups/").hasAnyAuthority("ALL_PRIVILEGES")
                 .and().authorizeRequests().antMatchers("/groups/{uuid}").hasAnyAuthority("ALL_PRIVILEGES")
-                .and().authorizeRequests().antMatchers("/groups/{id}").hasAnyAuthority("ALL_PRIVILEGES");
+                .and().authorizeRequests().antMatchers("/groups/{id}").hasAnyAuthority("ALL_PRIVILEGES")
+                .and().authorizeRequests().antMatchers("/groups/{uuid}/**").hasAnyAuthority("ALL_PRIVILEGES");
     }
  }
