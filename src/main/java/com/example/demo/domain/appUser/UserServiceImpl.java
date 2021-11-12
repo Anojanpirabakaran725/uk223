@@ -106,7 +106,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         return userRepository.findAll();
     }
 
-    public User updateUser(UUID id, User user){
+    public User updateUser(UUID id, User user) {
         return userRepository.findById(id)
                 .map(user1 -> {
                     user1.setUsername(user.getUsername());
@@ -119,7 +119,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
                 });
     }
 
-    public void deleteUser(UUID id){
+    public void deleteUser(UUID id) {
         userRepository.deleteById(id);
     }
 }

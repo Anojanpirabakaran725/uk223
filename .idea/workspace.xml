@@ -91,7 +91,7 @@
       <map>
         <entry key="JPA Inspector" value="false" />
         <entry key="JPA Palette" value="false" />
-        <entry key="JPA Structure" value="false" />
+        <entry key="JPA Structure" value="true" />
       </map>
     </option>
   </component>
@@ -132,7 +132,9 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <recent_temporary>

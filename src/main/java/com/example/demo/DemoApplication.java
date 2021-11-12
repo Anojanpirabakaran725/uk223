@@ -15,14 +15,14 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 class DemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
 
-	@Bean
-	PasswordEncoder passwordEncoder() {
-		return NoOpPasswordEncoder.getInstance();
-	}
+    @Bean
+    PasswordEncoder passwordEncoder() {
+        return NoOpPasswordEncoder.getInstance();
+    }
 
 	@Bean
 	public Docket api() {
