@@ -36,7 +36,7 @@ public class GroupController {
     @GetMapping("/")
     @PreAuthorize("hasAnyAuthority('READ', 'WRITE', 'DELETE', 'ALL_PRIVILEGES')")
     public ResponseEntity<Collection<Group>> findAll() {
-        log.info("Groups found");
+        log.info("findAll ENDPOINT GOT USED");
         return new ResponseEntity<Collection<Group>>(groupService.findAll(), HttpStatus.OK);
     }
 
@@ -48,7 +48,7 @@ public class GroupController {
     @GetMapping("/{uuid}")
     @PreAuthorize("hasAnyAuthority('READ', 'WRITE', 'DELETE', 'ALL_PRIVILEGES')")
     public ResponseEntity<Group> findById(@PathVariable("uuid") UUID uuid) {
-        log.info("Group found");
+        log.info("findById ENDPOINT GOT USED");
         return new ResponseEntity<Group>(groupService.findById(uuid), HttpStatus.OK);
     }
 
@@ -60,7 +60,7 @@ public class GroupController {
     @GetMapping("/{uuid}/{offset}/{pageSize}")
     @PreAuthorize("@groupServiceImpl.isUserAuthorizedForGroup(#uuid)")
     public ResponseEntity<Page<User>> getAllUsersOfGroup(@PathVariable("uuid") UUID uuid, @PathVariable("offset") int offset, @PathVariable("pageSize") int pageSize) {
-        log.info("Group and its users found");
+        log.info("getAllUsersOfGroup ENDPOINT GOT USED");
         return new ResponseEntity<>(groupService.getAllUsersOfGroup(uuid, offset, pageSize), HttpStatus.OK);
     }
 
@@ -72,7 +72,7 @@ public class GroupController {
     @DeleteMapping("/{uuid}")
     @PreAuthorize("hasAuthority('ALL_PRIVILEGES')")
     public ResponseEntity<String> delete(@PathVariable UUID uuid) throws InstanceNotFoundException {
-        log.info("Group got deleted");
+        log.info("DELETE ENDPOINT GOT USED");
         return ResponseEntity.ok().body(groupService.delete(uuid));
     }
 
@@ -83,9 +83,10 @@ public class GroupController {
      */
     @PostMapping("/")
     @PreAuthorize("hasAuthority('ALL_PRIVILEGES')")
-    public ResponseEntity<Group> postMethod(@RequestBody Group group) throws InstanceAlreadyExistsException {
-        log.info("Group got inserted");
-        return ResponseEntity.ok().body(groupService.saveGroup(group));
+    public String postMethod(@RequestBody Group group) throws InstanceAlreadyExistsException {
+        log.info("POST ENDPOINT GOT USED");
+        ResponseEntity.ok().body(groupService.saveGroup(group));
+        return "Group got inserted";
     }
 
     /**
@@ -95,8 +96,8 @@ public class GroupController {
      */
     @PutMapping("/{uuid}")
     @PreAuthorize("@groupServiceImpl.isUserAuthorizedForGroup(#uuid)")
-    public Group updateGroup(@PathVariable UUID uuid, @RequestBody Group group) {
-        log.info("Group got updated");
+    public String updateGroup(@PathVariable UUID uuid, @RequestBody Group group) {
+        log.info("PUT ENDPOINT GOT USED");
         return groupService.updateGroup(uuid, group);
     }
 

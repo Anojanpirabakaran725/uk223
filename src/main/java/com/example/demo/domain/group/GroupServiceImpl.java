@@ -57,7 +57,7 @@ public class GroupServiceImpl implements GroupService {
             groupRepository.delete(findById(uuid));
             return "Group deleted";
         } else {
-            throw new InstanceNotFoundException("Group not found");
+            return "Group not found";
         }
     }
 
@@ -73,7 +73,7 @@ public class GroupServiceImpl implements GroupService {
     @Override
     public Group saveGroup(Group group) throws InstanceAlreadyExistsException {
         if (groupRepository.findByName(group.getName()) != null) {
-            throw new InstanceAlreadyExistsException("Group already exists");
+            return null;
         } else {
             return groupRepository.save(group);
         }
@@ -113,14 +113,16 @@ public class GroupServiceImpl implements GroupService {
      * @param groupName -> To find the group by its groupname
      */
     @Override
-    public void addUserToGroup(String username, String groupName) {
+    public String addUserToGroup(String username, String groupName) {
         User user = userRepository.findByUsername(username);
         Group group = groupRepository.findByName(groupName);
         if (user.getGroup() == null) {
             group.getUsers().add(user);
             groupRepository.save(group);
+            return "User got added";
         } else {
             System.out.println("Already in group");
+            return "Already in group";
         }
     }
 
@@ -144,18 +146,21 @@ public class GroupServiceImpl implements GroupService {
      * @return -> Body of data that got inserted
      */
     @Override
-    public Group updateGroup(UUID id, Group group) {
-        return groupRepository.findById(id)
+    public String updateGroup(UUID id, Group group) {
+        groupRepository.findById(id)
                 .map(group1 -> {
                     groupRepository.deleteById(id);
                     group1.setName(group.getName());
                     group1.setDescription(group.getDescription());
                     group1.setUsers(group.getUsers());
-                    return groupRepository.save(group1);
+                    groupRepository.save(group1);
+                    return "Group got updated";
                 }).orElseGet(() -> {
                     group.setId(id);
-                    return groupRepository.save(group);
+                    groupRepository.save(group);
+                    return "Group got inserted";
                 });
+        return "Group got updated";
     }
 
     /**
@@ -166,7 +171,8 @@ public class GroupServiceImpl implements GroupService {
      */
     @Override
     public boolean isUserAuthorizedForGroup(UUID uuid) {
-        Object auth = SecurityContextHolder.getContext().getAuthentication().getPrincipal();User currentUser = userRepository.findByUsername(((UserDetails)auth).getUsername());
+        Object auth = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User currentUser = userRepository.findByUsername(((UserDetails)auth).getUsername());
 
         for (Role role : currentUser.getRoles()) {
             if (role.getName().equals("ADMIN")){
