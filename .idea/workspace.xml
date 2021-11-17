@@ -130,7 +130,7 @@
       <recent name="com.example.demo.domain.group" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GroupServiceImplTest.saveGroup">
+  <component name="RunManager" selected="Gradle.uk223 [bootRun]">
     <configuration name="GroupServiceImplTest.addUserToGroup" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -245,11 +245,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.uk223 [bootRun]" />
         <item itemvalue="Gradle.GroupServiceImplTest.saveGroup" />
         <item itemvalue="Gradle.GroupServiceImplTest.addUserToGroup" />
         <item itemvalue="Gradle.GroupServiceImplTest.delete" />
         <item itemvalue="Gradle.GroupServiceImplTest.findById" />
-        <item itemvalue="Gradle.uk223 [bootRun]" />
       </list>
     </recent_temporary>
   </component>
