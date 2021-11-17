@@ -186,8 +186,4 @@ public class GroupServiceImpl implements GroupService {
             return false;
         }
     }
-
-    public boolean isInGroup(UUID userUuid){
-        return groupRepository.existsById(userUuid);
-    }
 }

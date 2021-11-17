@@ -11,6 +11,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.management.InstanceAlreadyExistsException;
+import javax.management.InstanceNotFoundException;
 import java.util.Collection;
 import java.util.UUID;
 
@@ -51,10 +52,6 @@ public class GroupController {
         return new ResponseEntity<Group>(groupService.findById(uuid), HttpStatus.OK);
     }
 
-<<<<<<< HEAD
-    @GetMapping("/users/{uuid}/{offset}/{pageSize}")
-    @PreAuthorize("hasRole('ADMIN') || #")
-=======
     /**
      * Endpoint to get all users of a group
      *
@@ -62,7 +59,6 @@ public class GroupController {
      */
     @GetMapping("/{uuid}/{offset}/{pageSize}")
     @PreAuthorize("@groupServiceImpl.isUserAuthorizedForGroup(#uuid)")
->>>>>>> dev
     public ResponseEntity<Page<User>> getAllUsersOfGroup(@PathVariable("uuid") UUID uuid, @PathVariable("offset") int offset, @PathVariable("pageSize") int pageSize) {
         log.info("getAllUsersOfGroup ENDPOINT GOT USED");
         return new ResponseEntity<>(groupService.getAllUsersOfGroup(uuid, offset, pageSize), HttpStatus.OK);
@@ -93,12 +89,6 @@ public class GroupController {
         return "Group got inserted";
     }
 
-<<<<<<< HEAD
-    @PutMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
-    public Group updateGroup(@PathVariable UUID id, @RequestBody Group group) {
-        return groupService.updateGroup(id, group);
-=======
     /**
      * Endpoint to update a group by its id
      *
@@ -109,7 +99,6 @@ public class GroupController {
     public String updateGroup(@PathVariable UUID uuid, @RequestBody Group group) {
         log.info("PUT ENDPOINT GOT USED");
         return groupService.updateGroup(uuid, group);
->>>>>>> dev
     }
 
 }
