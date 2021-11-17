@@ -33,8 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
-        http.httpBasic().and().authorizeRequests().antMatchers("/groups/").hasAnyAuthority("ALL_PRIVILEGES")
-                .and().authorizeRequests().antMatchers("/groups/{uuid}").hasAnyAuthority("ALL_PRIVILEGES")
-                .and().authorizeRequests().antMatchers("/groups/{id}").hasAnyAuthority("ALL_PRIVILEGES");
+        http.httpBasic().and().authorizeRequests().antMatchers("/groups/").permitAll()
+                .and().authorizeRequests().antMatchers("/groups/{uuid}").permitAll();
     }
 }
