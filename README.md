@@ -3,7 +3,11 @@
 Herzlich Willkommen zu unserem üK Projekt. Unsere Aufgabe ist es die Teilaufgabe 4 in unserem Projekt zu implementieren.
 Dieses Projekt wurde von Anojan Pirabakaran und Enes Spahiu implementiert.
 
-#Voraussetzungen
+# Projektbeschreibung
+Unser Auftrag war es Group Modelle zu erstellen. Diese Gruppen sollte Informationen von Usern anzeigen. Der User kann nur in einer Gruppe gleichzeitig Mitglied sein.
+Wir haben Endpoints erstellt, für die einzelnen CRUD-Operationen an Gruppen zu machen. Bei der GET-Funktion können Sie mit Pagination alle Mitglieder der Gruppe auflisten. Ein Admin-User kann eine Gruppe erstellen, bearbeiten und löschen. Ein Admin oder die Mitglieder einer Gruppe können Informationen der Gruppe anschauen, bearbeiten und löschen. Wir haben auch Endpoints für die typischen CRUD-Operation für User gemacht. Sie können einen User erstellen, bearbeiten, anschauen und löschen. Alle Users haben verschiedene Rollen und Autoritäten. 
+
+# Voraussetzungen
 Seien Sie sicher, das Sie JAVA JDK VERSION 11 haben.
 Wählen Sie in den "Project Structure" unter "Project SDK" JDK 11.
 
@@ -14,9 +18,14 @@ Wenn Sie noch keinen haben, erstellen Sie einen mit diesem Command:
 Der Benutzername und das Password sind beide "postgres".
 Wenn Sie Lust hätten das Password zu ändern, gehen Sie im Projekt unter "application.properties".
 
+Nun müssen Sie eine neue Verbindung anlegen. Drücken Sie oben auf das Kabel und wählen Sie nun PostgreSQL. Nun erscheint ein kleines Fenster und geben Sie dort nun den DB-Username und Passwort ein. Nun sind sie mit dem DBeaver verbunden.
+Der Benutername und das Password sind "postgres".
+
 # Setup
 Clonen Sie dieses Projekt auf ihren Rechner. Öffnen Sie das Projekt mit IntelliJ.
-Wir haben Gradle schon heruntergeladen. Sie müssen nur die Gradle Funktion "bootRun" laufen lassen
+Da Gradle noch nicht heruntergeladen ist, müssen Sie einen Build & Run vornehmen. Drücken Sie im IntelliJ auf das grüne Play Button.
+Nun sollte Gradle heruntergeladen sein, und es sollte kein Fehler mehr im Programm auftauchen. Nun öffnen Sie die Gradle Funktionen und wählen Sie hier unter "Tasks/application" die Funktion "bootRun".
+Jetzt wird das Backend richtig gestartet. Stellen Sie sicher das der Docker-Container lauft.
 
 Öffnen Sie Ihren Browser und geben Sie: localhost:8080/users/welcome ein.
 Wenn ein Login Fenster auftaucht, geben Sie das ein:
@@ -27,12 +36,11 @@ password: bond
 
 Nun sehen Sie auf Ihrem Bildschirm "Hello World".
 
-Stellen Sie im DBeaver eine neue Verbindung her.
-Der Benutername und das Password sind "postgres".
 
 # Probleme
 - Wenn ein Problem mit groups_users auftaucht, starten Sie das Backend neu.
 - Container neu starten und schauen ob der Container lauft.
 - IntelliJ und Spring Boot neu starten.
 - Connection zu DBeaver überprüfen.
+- Wenn Sie ein JDBC / Hibernate Fehler haben, starten Sie den Docker-Container.
 
