@@ -16,7 +16,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface GroupService {
-    String saveGroup(Group group) throws InstanceAlreadyExistsException;
+    Group saveGroup(Group group) throws InstanceAlreadyExistsException;
     Group getGroup(String username);
     Page<User> getAllUsersOfGroup(UUID uuid, int offset, int pageSize);
     String addUserToGroup(String username, String groupName);

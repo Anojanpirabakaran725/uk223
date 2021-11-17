@@ -71,12 +71,11 @@ public class GroupServiceImpl implements GroupService {
      * already exists
      */
     @Override
-    public String saveGroup(Group group) throws InstanceAlreadyExistsException {
+    public Group saveGroup(Group group) throws InstanceAlreadyExistsException {
         if (groupRepository.findByName(group.getName()) != null) {
-            return "Group already exists";
+            return null;
         } else {
-            groupRepository.save(group);
-            return "Group got inserted";
+            return groupRepository.save(group);
         }
     }
 
