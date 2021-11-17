@@ -22,6 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="5cff08bd-f580-4b32-a43f-83d3612df5be" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/domain/group/GroupServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
@@ -59,6 +60,12 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupServiceImpl.java" afterDir="false" />
+>>>>>>> feature/CRUD-operations
+=======
+    <list default="true" id="796f7f61-7065-44c5-a0aa-b2e4b641e4a9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Use Case/Final version.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/domain/group/GroupServiceImplTest.java" beforeDir="false" />
 >>>>>>> feature/CRUD-operations
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,8 +106,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -162,7 +169,7 @@
       <recent name="com.example.demo.domain.group" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.GroupServiceImplTest.saveGroup">
+  <component name="RunManager" selected="Gradle.uk223 [bootRun]">
     <configuration name="GroupServiceImplTest.addUserToGroup" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -277,11 +284,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.uk223 [bootRun]" />
         <item itemvalue="Gradle.GroupServiceImplTest.saveGroup" />
         <item itemvalue="Gradle.GroupServiceImplTest.addUserToGroup" />
         <item itemvalue="Gradle.GroupServiceImplTest.delete" />
         <item itemvalue="Gradle.GroupServiceImplTest.findById" />
-        <item itemvalue="Gradle.uk223 [bootRun]" />
       </list>
     </recent_temporary>
   </component>
