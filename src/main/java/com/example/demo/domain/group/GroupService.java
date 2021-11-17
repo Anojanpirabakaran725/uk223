@@ -22,15 +22,15 @@ public interface GroupService {
 
     Page<User> getAllUsersOfGroup(UUID uuid, int offset, int pageSize);
 
-    User saveUser(User user);
+    String addUserToGroup(String username, String groupName);
 
-    void addUserToGroup(String username, String groupName);
+    boolean isUserAuthorizedForGroup(UUID uuid);
 
     Group findById(UUID id);
 
     List<Group> findAll();
 
-    void delete(UUID uuid);
+    String delete(UUID uuid) throws InstanceNotFoundException;
 
-    Group updateGroup(UUID id, Group group);
+    String updateGroup(UUID id, Group group);
 }
