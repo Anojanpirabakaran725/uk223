@@ -29,12 +29,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/AppStartupRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/AppStartupRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Use Case/Use Case_Latest.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/group/GroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/group/GroupController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/group/GroupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/group/GroupService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/group/GroupServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/group/GroupServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/security/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/AppStartupRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/AppStartupRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documentation/Dokumentation Gruppe 4.docx" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/Dokumentation Gruppe 4.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +82,19 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JpbToolWindowState">
@@ -107,7 +123,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../TBZ/2021-2022/Modul 226b/Projects/SocialNetwork/SocialNetwork" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -115,7 +131,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.54367816" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="uk223 [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -156,6 +172,11 @@
       <workItem from="1636627144491" duration="14496000" />
       <workItem from="1636701730514" duration="9098000" />
       <workItem from="1636718753212" duration="93000" />
+      <workItem from="1637009464946" duration="594000" />
+      <workItem from="1637046878815" duration="2247000" />
+      <workItem from="1637058210010" duration="1078000" />
+      <workItem from="1637063639108" duration="1240000" />
+      <workItem from="1637087159913" duration="11216000" />
     </task>
     <servers />
   </component>
@@ -173,31 +194,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="1877" height="354" key="GridCell.Tab.0.bottom" timestamp="1636725699833">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="1877" height="354" key="GridCell.Tab.0.bottom/-3840.-424.1536.848/0.0.1920.1160/1920.23.1920.1160@0.0.1920.1160" timestamp="1636725699833" />
-    <state width="1493" height="354" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1636724066301" />
-    <state width="1877" height="354" key="GridCell.Tab.0.center" timestamp="1636725699833">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="1877" height="354" key="GridCell.Tab.0.center/-3840.-424.1536.848/0.0.1920.1160/1920.23.1920.1160@0.0.1920.1160" timestamp="1636725699833" />
-    <state width="1493" height="354" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1636724066301" />
-    <state width="1877" height="354" key="GridCell.Tab.0.left" timestamp="1636725699833">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="1877" height="354" key="GridCell.Tab.0.left/-3840.-424.1536.848/0.0.1920.1160/1920.23.1920.1160@0.0.1920.1160" timestamp="1636725699833" />
-    <state width="1493" height="354" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1636724066300" />
-    <state width="1877" height="354" key="GridCell.Tab.0.right" timestamp="1636725699833">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state width="1877" height="354" key="GridCell.Tab.0.right/-3840.-424.1536.848/0.0.1920.1160/1920.23.1920.1160@0.0.1920.1160" timestamp="1636725699833" />
-    <state width="1493" height="354" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1636724066301" />
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2" timestamp="1636724902947">
-      <screen x="0" y="0" width="1920" height="1160" />
-    </state>
-    <state x="552" y="313" key="Vcs.Push.Dialog.v2/-3840.-424.1536.848/0.0.1920.1160/1920.23.1920.1160@0.0.1920.1160" timestamp="1636724902947" />
   </component>
 </project>
