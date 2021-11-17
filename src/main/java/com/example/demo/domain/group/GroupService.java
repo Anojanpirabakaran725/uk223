@@ -16,13 +16,13 @@ import java.util.Optional;
 import java.util.UUID;
 
 public interface GroupService {
-    Group saveGroup(Group group) throws InstanceAlreadyExistsException;
+    String saveGroup(Group group) throws InstanceAlreadyExistsException;
     Group getGroup(String username);
     Page<User> getAllUsersOfGroup(UUID uuid, int offset, int pageSize);
-    void addUserToGroup(String username, String groupName);
+    String addUserToGroup(String username, String groupName);
     boolean isUserAuthorizedForGroup(UUID uuid);
     Group findById(UUID id);
     List<Group> findAll();
     String delete(UUID uuid) throws InstanceNotFoundException;
-    Group updateGroup(UUID id, Group group);
+    String updateGroup(UUID id, Group group);
 }

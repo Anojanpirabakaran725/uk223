@@ -83,7 +83,7 @@ public class GroupController {
      */
     @PostMapping("/")
     @PreAuthorize("hasAuthority('ALL_PRIVILEGES')")
-    public ResponseEntity<Group> postMethod(@RequestBody Group group) throws InstanceAlreadyExistsException {
+    public ResponseEntity<String> postMethod(@RequestBody Group group) throws InstanceAlreadyExistsException {
         log.info("Group got inserted");
         return ResponseEntity.ok().body(groupService.saveGroup(group));
     }
@@ -95,7 +95,7 @@ public class GroupController {
      */
     @PutMapping("/{uuid}")
     @PreAuthorize("@groupServiceImpl.isUserAuthorizedForGroup(#uuid)")
-    public Group updateGroup(@PathVariable UUID uuid, @RequestBody Group group) {
+    public String updateGroup(@PathVariable UUID uuid, @RequestBody Group group) {
         log.info("Group got updated");
         return groupService.updateGroup(uuid, group);
     }
