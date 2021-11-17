@@ -5,7 +5,11 @@ Dieses Projekt wurde von Anojan Pirabakaran und Enes Spahiu implementiert.
 
 # Projektbeschreibung
 Unser Auftrag war es Group Modelle zu erstellen. Diese Gruppen sollte Informationen von Usern anzeigen. Der User kann nur in einer Gruppe gleichzeitig Mitglied sein.
-Wir haben Endpoints erstellt, für die einzelnen CRUD-Operationen an Gruppen zu machen. Bei der GET-Funktion können Sie mit Pagination alle Mitglieder der Gruppe auflisten. Ein Admin-User kann eine Gruppe erstellen, bearbeiten und löschen. Ein Admin oder die Mitglieder einer Gruppe können Informationen der Gruppe anschauen, bearbeiten und löschen. Wir haben auch Endpoints für die typischen CRUD-Operation für User gemacht. Sie können einen User erstellen, bearbeiten, anschauen und löschen. Alle Users haben verschiedene Rollen und Autoritäten. 
+Wir haben Endpoints erstellt, für die einzelnen CRUD-Operationen an Gruppen zu machen. Bei der GET-Funktion können Sie mit Pagination alle Mitglieder der Gruppe auflisten. 
+
+Ein Admin-User kann eine Gruppe erstellen, bearbeiten und löschen. Ein Admin oder die Mitglieder einer Gruppe können Informationen der Gruppe anschauen, bearbeiten und löschen. Wir haben auch Endpoints für die typischen CRUD-Operation für User gemacht. 
+
+Sie können sich einen User erstellen, bearbeiten, anschauen und löschen. Alle Users haben verschiedene Rollen und Autoritäten. 
 
 # Voraussetzungen
 Seien Sie sicher, das Sie JAVA JDK VERSION 11 haben.
