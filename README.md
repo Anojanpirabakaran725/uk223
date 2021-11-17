@@ -3,8 +3,6 @@
 Herzlich Willkommen zu unserem üK Projekt. Unsere Aufgabe ist es die Teilaufgabe 4 in unserem Projekt zu implementieren.
 Dieses Projekt wurde von Anojan Pirabakaran und Enes Spahiu implementiert.
 
-<<<<<<< HEAD
-=======
 # Projektbeschreibung
 Unser Auftrag war es Group Modelle zu erstellen. Diese Gruppen sollte Informationen von Usern anzeigen. Der User kann nur in einer Gruppe gleichzeitig Mitglied sein.
 Wir haben Endpoints erstellt, für die einzelnen CRUD-Operationen an Gruppen zu machen. Bei der GET-Funktion können Sie mit Pagination alle Mitglieder der Gruppe auflisten. 
@@ -13,7 +11,6 @@ Ein Admin-User kann eine Gruppe erstellen, bearbeiten und löschen. Ein Admin od
 
 Sie können sich einen User erstellen, bearbeiten, anschauen und löschen. Alle Users haben verschiedene Rollen und Autoritäten. 
 
->>>>>>> dev
 # Voraussetzungen
 Seien Sie sicher, das Sie JAVA JDK VERSION 11 haben.
 Wählen Sie in den "Project Structure" unter "Project SDK" JDK 11.
@@ -25,10 +22,7 @@ Wenn Sie noch keinen haben, erstellen Sie einen mit diesem Command:
 Der Benutzername und das Password sind beide "postgres".
 Wenn Sie Lust hätten das Password zu ändern, gehen Sie im Projekt unter "application.properties".
 
-<<<<<<< HEAD
-=======
 
->>>>>>> dev
 # Setup
 Clonen Sie dieses Projekt auf ihren Rechner. Öffnen Sie das Projekt mit IntelliJ.
 Da Gradle noch nicht heruntergeladen ist, müssen Sie einen Build & Run vornehmen. Drücken Sie im IntelliJ auf das grüne Play Button.
@@ -53,8 +47,6 @@ Nun sehen Sie auf Ihrem Bildschirm "Hello World".
 - Container neu starten und schauen ob der Container lauft.
 - IntelliJ und Spring Boot neu starten.
 - Connection zu DBeaver überprüfen.
-<<<<<<< HEAD
-=======
+
 - Wenn Sie ein JDBC / Hibernate Fehler haben, starten Sie den Docker-Container.
 
->>>>>>> dev
