@@ -21,13 +21,9 @@ public interface GroupService {
     Group getGroup(String username);
 
     Page<User> getAllUsersOfGroup(UUID uuid, int offset, int pageSize);
-<<<<<<< HEAD
 
-    void addUserToGroup(String username, String groupName);
-
-=======
     String addUserToGroup(String username, String groupName);
->>>>>>> feature/CRUD-operations
+
     boolean isUserAuthorizedForGroup(UUID uuid);
 
     Group findById(UUID id);
@@ -35,10 +31,6 @@ public interface GroupService {
     List<Group> findAll();
 
     String delete(UUID uuid) throws InstanceNotFoundException;
-<<<<<<< HEAD
 
-    Group updateGroup(UUID id, Group group);
-=======
     String updateGroup(UUID id, Group group);
->>>>>>> feature/CRUD-operations
 }
