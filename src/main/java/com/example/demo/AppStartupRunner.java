@@ -20,22 +20,9 @@ import java.util.UUID;
 @Component
 //ApplicationListener used to run commands after startup
 class AppStartupRunner implements ApplicationRunner {
-    @Autowired
-    private final UserService userService;
-    @Autowired
-    private final RoleRepository roleRepository;
-    @Autowired
-    private final AuthorityRepository authorityRepository;
-    @Autowired
-    private final GroupService groupService;
-    AppStartupRunner(UserService userService, RoleRepository roleRepository, AuthorityRepository authorityRepository, GroupService groupService) {
-        this.userService = userService;
-        this.roleRepository = roleRepository;
-        this.authorityRepository = authorityRepository;
-        this.groupService = groupService;
-    }
     @Override
     public void run(ApplicationArguments args) throws Exception {
+<<<<<<< HEAD
 //        RUN YOUR STARTUP CODE HERE
 //        e.g. to add a user or role to the DB (only for testing)
 //        Authorities
@@ -78,5 +65,7 @@ class AppStartupRunner implements ApplicationRunner {
         groupService.addUserToGroup("john", "Users");
         groupService.addUserToGroup("user1", "Admins");
 
+=======
+>>>>>>> feature/CRUD-operations
     }
 }

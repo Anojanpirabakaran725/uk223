@@ -21,9 +21,12 @@ public interface GroupService {
     Group getGroup(String username);
 
     Page<User> getAllUsersOfGroup(UUID uuid, int offset, int pageSize);
+<<<<<<< HEAD
 
     User saveUser(User user);
 
+=======
+>>>>>>> feature/CRUD-operations
     void addUserToGroup(String username, String groupName);
     boolean isUserAuthorizedForGroup(UUID uuid);
     Group findById(UUID id);
