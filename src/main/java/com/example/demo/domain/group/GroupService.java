@@ -19,7 +19,6 @@ public interface GroupService {
     Group saveGroup(Group group) throws InstanceAlreadyExistsException;
     Group getGroup(String username);
     Page<User> getAllUsersOfGroup(UUID uuid, int offset, int pageSize);
-    User saveUser(User user);
     void addUserToGroup(String username, String groupName);
     boolean isUserAuthorizedForGroup(UUID uuid);
     Group findById(UUID id);

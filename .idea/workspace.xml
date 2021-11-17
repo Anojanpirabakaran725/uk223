@@ -29,17 +29,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Use Case/Use Case_Latest.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/group/GroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/group/GroupController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/group/GroupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/group/GroupService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/group/GroupServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/group/GroupServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/example/demo/domain/security/SecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documentation/Dokumentation Gruppe 4.docx" beforeDir="false" afterPath="$PROJECT_DIR$/documentation/Dokumentation Gruppe 4.docx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/domain/security/SecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +146,9 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -194,5 +192,21 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/demo/domain/group/GroupServiceImpl.java</url>
+          <line>176</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="((GroupServiceImpl)this).userRepository" custom="com.example.demo.domain.group.GroupServiceImpl" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
